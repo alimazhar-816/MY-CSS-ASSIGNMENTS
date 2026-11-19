@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Task 6 - Combinators</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>CSS Combinators</h1>
+
+<div class="section">
+    <h2>1. Descendant Combinator (space)</h2>
+    <p>Selector used: .descendant p</p>
+    <div class="descendant">
+        <p>Paragraph directly inside the div (red)</p>
+        <div>
+            <p>Paragraph inside another div (red)</p>
+            <section>
+                <p>Paragraph deeper inside a section (red)</p>
+            </section>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>2. Child Combinator (&gt;)</h2>
+    <p>Selector used: .child &gt; p</p>
+    <div class="child">
+        <p>Paragraph directly inside the div (blue)</p>
+        <div>
+            <p>Paragraph inside another div (not selected)</p>
+        </div>
+        <p>Another direct paragraph (blue)</p>
+    </div>
+</div>
+
+<div class="section adjacent">
+    <h2>3. Adjacent Sibling Combinator (+)</h2>
+    <p>Selector used: .adjacent h3 + p</p>
+    <h3>Heading 3</h3>
+    <p>This paragraph comes right after the h3 (yellow background)</p>
+    <p>This paragraph is second so it is not selected</p>
+    <p>This paragraph is also not selected</p>
+</div>
+
+<div class="section general">
+    <h2>4. General Sibling Combinator (~)</h2>
+    <p>Selector used: .general h3 ~ p</p>
+    <p>This paragraph is before the h3 so it is not selected</p>
+    <h3>Heading 3</h3>
+    <p>First paragraph after the h3 (green)</p>
+    <p>Second paragraph after the h3 (green)</p>
+    <div>
+        <p>Paragraph inside a div, not a sibling of h3 (not selected)</p>
+    </div>
+    <p>Third paragraph after the h3 (green)</p>
+</div>
+
+</body>
+</html>
